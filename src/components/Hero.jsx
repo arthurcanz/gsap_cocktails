@@ -26,6 +26,7 @@ const Hero = () => {
 	 duration: 1.8,
 	 ease: "expo.out",
 	 stagger: 0.06,
+     opacity: 0,
 	});
 	
 	gsap.from(paragraphSplit.lines, {
@@ -46,7 +47,7 @@ const Hero = () => {
 		scrub: true,
 	 },
 	})
-	.to(".right-leaf", { y: 200 }, 0)
+	.to(".right-leaf", { y: 1000 }, 0)
 	.to(".left-leaf", { y: -200 }, 0)
 	.to(".arrow", { y: 100 }, 0);
 	

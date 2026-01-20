@@ -54,7 +54,7 @@ const Hero = () => {
 	const startValue = isMobile ? "top 50%" : "center 60%";
 	const endValue = isMobile ? "120% top" : "bottom top";
 	
-	let tl = gsap.timeline({
+	 let tl = gsap.timeline({
 	 scrollTrigger: {
 		trigger: "video",
 		start: startValue,
@@ -65,10 +65,11 @@ const Hero = () => {
 	});
 	
 	videoRef.current.onloadedmetadata = () => {
+	 videoRef.current.pause();
 	 tl.to(videoRef.current, {
 		currentTime: videoRef.current.duration,
 	 });
-	};
+	}; 
  }, []);
  
  return (
@@ -109,12 +110,12 @@ const Hero = () => {
 		 </div>
 		</div>
 	 </section>
-	 
-	 <div className="video absolute inset-0">
+	 <div className="video  absolute inset-0">
 		<video
 		 ref={videoRef}
 		 muted
 		 playsInline
+		 autoPlay
 		 preload="auto"
 		 src="/videos/output.mp4"
 		/>
